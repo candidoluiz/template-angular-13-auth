@@ -27,40 +27,41 @@
             <ngb-accordion [destroyOnHide]="false" [closeOthers]="true">
 
                 <ng-container *ngFor="let separador of separadores; let i = index">
-
-                    <ngb-panel>
-                        <ng-template ngbPanelHeader>
-                          <div class="vsm-header">{{separador.separador}}</div>
-                        </ng-template>
-                    </ngb-panel>
-
-                    <ng-container *ngFor="let menu of separador.menus; let j = index">
-                        <ngb-panel [id]="'id'+i+'-'+j">
-                            <ng-template ngbPanelHeader>
-                                <button ngbPanelToggle class="vsm-link">
-                                    <i [class]="menu.icon"></i>
-                                    <span class="vsm-title">{{menu.nome}}</span>
-                                    <i class="vsm-arrow"></i>
-                                </button>
+                    <ng-container *ngIf="separador.exibe">                  
+                        <ngb-panel>
+                            <ng-template ngbPanelHeader >
+                            <div class="vsm-header">{{separador.separador}}</div>
                             </ng-template>
-                            <ng-container>
-                                <ng-template ngbPanelContent>
-                                    <div class="vsm-dropdown">
-                                      <div class="vsm-list">
-                                        <ng-container *ngFor="let childrem of menu.filhos">
-                                            <div class="vsm-item">
-                                                <a routerLinkActive="active-item" [routerLink]="['/',menu.state,childrem.target]" class="vsm-link">
-                                                    <span class="vsm-title">{{childrem.nome}}</span>
-                                                </a>
-                                            </div>
-                                        </ng-container>
-                                      </div>
-                                    </div>
-                                  </ng-template>
-                            </ng-container>
                         </ngb-panel>
+
+                        <ng-container *ngFor="let menu of separador.menus; let j = index">
+                            
+                            <ngb-panel [id]="'id'+i+'-'+j" *ngIf="menu.exibe">
+                                <ng-template ngbPanelHeader>
+                                    <button ngbPanelToggle class="vsm-link">
+                                        <i [class]="menu.icon"></i>
+                                        <span class="vsm-title">{{menu.nome}}</span>
+                                        <i class="vsm-arrow"></i>
+                                    </button>
+                                </ng-template>
+                                <ng-container>
+                                    <ng-template ngbPanelContent>
+                                        <div class="vsm-dropdown">
+                                        <div class="vsm-list">
+                                            <ng-container *ngFor="let childrem of menu.filhos">
+                                                <div class="vsm-item">
+                                                    <a routerLinkActive="active-item" [routerLink]="['/',menu.state,childrem.target]" class="vsm-link">
+                                                        <span class="vsm-title">{{childrem.nome}}</span>
+                                                    </a>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+                            </ngb-panel>
+                        </ng-container>
                     </ng-container>
-                   
                 </ng-container>
                           
             </ngb-accordion>

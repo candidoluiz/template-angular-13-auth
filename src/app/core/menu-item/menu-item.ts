@@ -3,12 +3,14 @@ import { Injectable } from "@angular/core";
 export interface ISeparador {
     separador: string;
     menus: IMainMenu[];
+    exibe: boolean;
 }
 
 export interface IMainMenu {
     nome: string;
     state: string          
     icon: string;
+    exibe: boolean;
     filhos?: IChildrenItems[];   
 }
 
@@ -22,20 +24,24 @@ export interface IChildrenItems {
 const MENUITEMS: ISeparador[] = [
     {
         separador: "NAVEGAÇÃO",
+        exibe: true,
         menus: [
             {
                 nome: "CADASTRO",
+                exibe: true,
                 state: "cadastro",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
                     {
                         nome: "CLIENTE",
-                        target: "cliente"
+                        target: "cliente",
+                        acesso: "VISUALIZAR_CLIENTE"
 
                     },
                     {
                         nome: "TESTE",
-                        target: "teste"
+                        target: "teste",
+                        acesso: "VISUALIZAR_TESTE"
 
                     }
                 ]
@@ -44,9 +50,11 @@ const MENUITEMS: ISeparador[] = [
     },
     {
         separador: "Main Navigation",
+        exibe: true,
         menus: [
             {
                 nome: "Pages",
+                exibe: true,
                 state: "pages",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
@@ -71,9 +79,11 @@ const MENUITEMS: ISeparador[] = [
     },
     {
         separador: "Bootstrap Components",
+        exibe: true,
         menus: [
             {
                 nome: "Elements",
+                exibe: true,
                 state: "elements",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
@@ -106,6 +116,7 @@ const MENUITEMS: ISeparador[] = [
             },
             {
                 nome: "Components",
+                exibe: true,
                 state: "components",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
@@ -143,6 +154,7 @@ const MENUITEMS: ISeparador[] = [
             },
             {
                 nome: "Form Elements",
+                exibe: true,
                 state: "forms",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
@@ -160,6 +172,7 @@ const MENUITEMS: ISeparador[] = [
             },
             {
                 nome: "Tables",
+                exibe: true,
                 state: "tables",
                 icon: "vsm-icon pe-7s-note2",
                 filhos: [
@@ -174,9 +187,11 @@ const MENUITEMS: ISeparador[] = [
     },
     {
         separador: "ADMINISTRATIVO",
+        exibe: true,
         menus: [
             {
                 nome: "Configuração",
+                exibe: true,
                 state: "configuracao",
                 icon: "vsm-icon pe-7s-config",
                 filhos: [
@@ -184,7 +199,12 @@ const MENUITEMS: ISeparador[] = [
                         nome: "Parâmetro",
                         target: "parametro"
 
-                    },                  
+                    },
+                    {
+                        nome: "Perfil",
+                        target: "parametro"
+
+                    },
                 ]
             }
         ]

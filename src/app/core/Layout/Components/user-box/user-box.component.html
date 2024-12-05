@@ -4,7 +4,7 @@
       <div class="widget-content-wrapper">
         <div class="widget-content-left">
           <div class="btn-group" ngbDropdown placement="bottom-right">
-            <button type="button" class="btn btn-link p-0 me-2" ngbDropdownToggle>
+            <button type="button" class="btn btn-link p-0 me-2 remove-caret" ngbDropdownToggle>
               <span>
                 <div class="icon-wrapper icon-wrapper-alt rounded-circle">
                   <img width="42" src="./assets/images/avatars/1.jpg" alt="" class="rounded-circle">
@@ -12,12 +12,17 @@
               </span>
             </button>
             <div ngbDropdownMenu>
-              <button class="dropdown-item">Menus</button>
-              <button class="dropdown-item">Settings</button>
-              <h6 class="dropdown-header">Header</h6>
-              <button class="dropdown-item">Actions</button>
+                <button class="dropdown-item">
+                    <i class="vsm-icon pe-7s-id icone-usuario perfil"></i>
+                    Perfil
+                </button>
+
               <div class="dropdown-divider"></div>
-              <button class="dropdown-item">Dividers</button>
+              
+                <button class="dropdown-item"> 
+                    <i class="vsm-icon pe-7s-power icone-usuario logout"></i>
+                    Logout
+                </button>
             </div>
           </div>
         </div>

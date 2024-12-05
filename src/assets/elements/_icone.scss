@@ -1,0 +1,17 @@
+.icone-usuario{
+    height: 20px;
+    width: 20px;
+    font-size: 1.2rem;   
+    vertical-align: sub;
+
+    &.logout{
+        color: red;
+    }
+    &.perfil {
+        color: green
+    }
+}
+
+.remove-caret::after{
+    content: none !important;
+}
