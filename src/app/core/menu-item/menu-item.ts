@@ -202,7 +202,7 @@ const MENUITEMS: ISeparador[] = [
                     },
                     {
                         nome: "Perfil",
-                        target: "parametro"
+                        target: "perfil"
 
                     },
                 ]

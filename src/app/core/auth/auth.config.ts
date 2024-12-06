@@ -17,7 +17,7 @@ export const authConfig: AuthConfig = {
 
 export const resouce = {
     resourceServer: {
-        allowedUrls: [environment.BASE_URL],
+        allowedUrls: [environment.API_URL],
         sendAccessToken: true
     }
 }

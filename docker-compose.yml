@@ -1,0 +1,10 @@
+services:
+  client:
+    container_name: frontend
+    image: aplicacao-angular
+    env_file: .env
+    ports:
+      - "4300:80"    
+    expose:
+        - 80
+    restart: unless-stopped
