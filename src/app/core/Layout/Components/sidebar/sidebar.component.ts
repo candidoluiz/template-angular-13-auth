@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {ThemeOptions} from '../../../../theme-options';
-import {select} from '@angular-redux/store';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import { ISeparador, MenuItems } from 'src/app/core/menu-item/menu-item';
@@ -21,7 +20,6 @@ export class SidebarComponent implements OnInit {
     private menuItems: MenuItems) {
   }
 
-  @select('config') public config$: Observable<any>;
 
   private newInnerWidth: number;
   private innerWidth: number;

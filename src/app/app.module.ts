@@ -1,9 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {NgReduxModule} from '@angular-redux/store';
-import {NgRedux, DevToolsExtension} from '@angular-redux/store';
-import {rootReducer, ArchitectUIState} from './core/ThemeOptions/store';
-import {ConfigActions} from './core/ThemeOptions/store/config.actions';
 import {AppRoutingModule} from './app.routing';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import {HttpClientModule} from '@angular/common/http';
@@ -62,7 +58,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgReduxModule,
     LoadingBarRouterModule,
     PerfectScrollbarModule,
     HttpClientModule,
@@ -80,22 +75,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       DEFAULT_PERFECT_SCROLLBAR_CONFIG,
       // DEFAULT_DROPZONE_CONFIG,
     },
-    ConfigActions,
     MenuItems
   ],
   bootstrap: [AppComponent]
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<ArchitectUIState>,
-              private devTool: DevToolsExtension) {
-
-    this.ngRedux.configureStore(
-      rootReducer,
-      {} as ArchitectUIState,
-      [],
-      [devTool.isEnabled() ? devTool.enhancer() : f => f]
-    );
-
+  constructor() {
+   
   }
 }
