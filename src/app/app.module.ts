@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app.routing';
-import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 // BOOTSTRAP COMPONENTS
@@ -10,7 +9,6 @@ import {PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 // LAYOUT
 import {BaseLayoutComponent} from './core/Layout/base-layout/base-layout.component';
-import {PageTitleComponent} from './core/Layout/Components/page-title/page-title.component';
 // HEADER
 import {HeaderComponent} from './core/Layout/Components/header/header.component';
 import {UserBoxComponent} from './core/Layout/Components/user-box/user-box.component';
@@ -37,7 +35,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
     AppComponent,
     BaseLayoutComponent,
-    PageTitleComponent,
     LoginLayoutComponent,
 
     // HEADER
@@ -58,7 +55,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoadingBarRouterModule,
     PerfectScrollbarModule,
     HttpClientModule,
     SharedModule,
