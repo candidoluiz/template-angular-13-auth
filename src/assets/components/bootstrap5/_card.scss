@@ -82,7 +82,10 @@
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   color: $card-cap-color;
   background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+  //border-bottom: $card-border-width solid $card-border-color;
+  border-bottom: none;
+  text-transform: uppercase;
+  font-weight: bold;
 
   &:first-child {
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
@@ -93,7 +96,8 @@
   padding: $card-cap-padding-y $card-cap-padding-x;
   color: $card-cap-color;
   background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
+  //border-top: $card-border-width solid $card-border-color;
+  border-top: none;
 
   &:last-child {
     @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
