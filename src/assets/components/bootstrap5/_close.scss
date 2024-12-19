@@ -13,19 +13,14 @@
   border: 0; // for button elements
   @include border-radius();
   opacity: $btn-close-opacity;
+ 
 
   // Override <a>'s hover style
   &:hover {
     color: $btn-close-color;
     text-decoration: none;
     opacity: $btn-close-hover-opacity;
-  }
-
-  &:focus {
-    outline: 0;
-    box-shadow: $btn-close-focus-shadow;
-    opacity: $btn-close-focus-opacity;
-  }
+  } 
 
   &:disabled,
   &.disabled {

@@ -57,3 +57,43 @@ $link-hover-color: darken($link-color, 15%);
 .btn-light {
   border-color: darken(#f5f5f5, 10%);
 }
+
+// Icon Buttons
+
+.btn-icon {
+    vertical-align: bottom;
+    padding: 4px;
+  
+    &.btn-icon-right {
+      .btn-icon-wrapper {
+        margin-left: ($spacer / 2);
+        margin-right: 0;
+      }
+    }
+  
+    .btn-icon-wrapper {
+      margin-right: ($spacer / 4);
+      margin-left: 0;
+      margin-top: 0;
+      font-size: 22px;
+      vertical-align: middle;
+      transition: none;
+      display: inline-block;
+    }
+  
+    &.btn-link {
+      text-decoration: none;
+    }
+  
+    &.btn-lg:not(.btn-block) {
+      .btn-icon-wrapper {
+        font-size: 25px;
+      }
+    }
+  
+    &.btn-sm:not(.btn-block) {
+      .btn-icon-wrapper {
+        font-size: 16px;
+      }
+    }
+  }
