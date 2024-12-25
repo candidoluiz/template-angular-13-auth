@@ -36,17 +36,16 @@
             <input name="state" id="exampleState" type="text" class="form-control">
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="position-relative mb-3">
-            <label for="exampleZip" class="form-label">Zip</label>
-            <input name="zip" id="exampleZip" type="text" class="form-control">
-          </div>
+
+        <div class="col-md-2" [formGroup]="formulario">
+            <app-pills formControlName="pill" label="Custom Imput"></app-pills>
         </div>
+
       </div>
       <div class="position-relative form-check">
           <input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
           <label for="exampleCheck" class="form-label form-check-label">Check me out</label>
-      </div>
+      </div>      
       <button class="mt-2 btn btn-info" (click)="openModals()">Sign in</button>
     </form>  
   </div>

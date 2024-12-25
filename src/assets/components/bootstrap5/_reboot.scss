@@ -26,6 +26,11 @@
 // null by default, thus nothing is generated.
 
 :root {
+    //--sz: 1.7vmin;  /* size */
+    --sz: 18px;  /* size */
+    --on: #2eddf3; /* color on */
+    --of: #b9b9b9; /* color off */
+    --tr: all 0.25s ease 0s;
   font-size: $font-size-root;
 
   @if $enable-smooth-scroll {

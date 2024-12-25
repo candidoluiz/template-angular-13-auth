@@ -1,0 +1,14 @@
+<label class="form-label">{{label}}</label>
+<div class="toggle">
+    <input type="checkbox" id="btn" 
+        [checked]="checked" 
+        (change)="onCheckboxChange($event)"
+        (blur)="onTouched()"
+    >
+    <label for="btn">
+        <span class="track">
+            <span class="txt"></span>
+        </span>
+        <span class="thumb">|||</span>
+    </label>
+</div>
