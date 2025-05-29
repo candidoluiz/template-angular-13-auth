@@ -3,19 +3,17 @@ import { environment } from "src/environments/environment";
 
 export const authConfig: AuthConfig = {
     issuer: environment.AUTH_SERVER_URL,
-    redirectUri: environment.CLIENT_URL,
+    redirectUri: environment.CLIENT_URL + '/login/login-callback',
     clientId: environment.CLIENT_ID,
     responseType: 'code',
-    dummyClientSecret: environment.CLIENT_SECRET,
-    scope: 'openid',
-    postLogoutRedirectUri: environment.CLIENT_URL,
-    requireHttps: false,
-    strictDiscoveryDocumentValidation: false,
-    useHttpBasicAuth:true  
-
+    scope: 'openid profile email',
+    postLogoutRedirectUri: environment.CLIENT_URL_LOGOUT,
+    requireHttps: environment.production,
+    strictDiscoveryDocumentValidation: true,
+    useHttpBasicAuth:false
 }
 
-export const resouce = {
+export const resource = {
     resourceServer: {
         allowedUrls: [environment.API_URL],
         sendAccessToken: true

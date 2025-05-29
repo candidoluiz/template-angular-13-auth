@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { Observable } from 'rxjs';
 import { authConfig } from './auth.config';
 
 @Injectable({
@@ -27,16 +26,13 @@ export class AuthService {
     }
 
     get claims() {
-        return this.oauthService.getIdentityClaims();
+        return this.oauthService.getIdentityClaims() ?? {};
     }
 
-    get token() {
-        return this.oauthService.getAccessToken();
+    get token(): string | null {
+        return this.oauthService.getAccessToken() ?? '';
     }
 
 
-    buscarPropriedadeCliente(): Observable<any> {
-        return this.http.get(`http://127.0.0.1:9009/teste`)
-            .pipe();
-    }
+
 }

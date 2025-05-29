@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app.routing';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 // BOOTSTRAP COMPONENTS
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
@@ -21,7 +21,8 @@ import { LoginLayoutComponent } from './core/Layout/login-layout/login.component
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { resouce } from './core/auth/auth.config';
+import { resource } from './core/auth/auth.config';
+import { TokenInterceptor } from './core/auth/token.interceptor';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -59,25 +60,22 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     SharedModule,
     BrowserAnimationsModule,
-    OAuthModule.forRoot(resouce)
+    OAuthModule.forRoot(resource)
 
   ],
   providers: [
     {
-      provide:
-      PERFECT_SCROLLBAR_CONFIG,
-      // DROPZONE_CONFIG,
-      useValue:
-      DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-      // DEFAULT_DROPZONE_CONFIG,
+      provide:PERFECT_SCROLLBAR_CONFIG,
+      useValue:DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
     },
     MenuItems
   ],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-  constructor() {
-   
-  }
-}
+export class AppModule { }

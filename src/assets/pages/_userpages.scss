@@ -7,9 +7,11 @@
 }
 
 .app-logo-inverse {
-  height: $logo-height;
-  width: $logo-width;
-  background: url('/assets/images/logo.png');
+  height: 80px;
+  width: 358px;
+  background: url(/assets/images/sysnexus-text.svg) no-repeat center;
+  filter: brightness(0) invert(1);
+  background-size: cover;
 }
 
 .app-login-box {
