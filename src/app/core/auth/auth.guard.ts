@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
         private oauthService: OAuthService) { }
 
     canActivate() {
-        //return true;
+        return true;
         if (this.oauthService.hasValidIdToken() || this.oauthService.hasValidAccessToken()) {
             return true;
         }

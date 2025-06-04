@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -17,7 +17,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
           </p>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+          <button type="button" class="btn btn-secondary" (click)="onFecharEvent.emit()">Close</button>
           <button type="button" class="mr-2 btn-icon btn btn-info"><i class="pe-7s-diskette btn-icon-wrapper"></i>Salvar</button>
           <button type="button" class="mr-2 btn-icon btn btn-outline-info"><i class="pe-7s-search btn-icon-wrapper"></i>Pesquisar</button>
           <button type="button" class="mr-2 btn-icon btn btn-warning"><i class="pe-7s-info btn-icon-wrapper"></i>Detalhes</button>
@@ -31,11 +31,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   `
 })
 
-export class Modal1Component {
-  constructor(private modalService: NgbModal) {}
+export class Modal1Component implements OnInit {
+    @Output() onFecharEvent: EventEmitter<any> = new EventEmitter<any>();
+    @Input() formulario;
 
-  closeModal() {
-    this.modalService.dismissAll();
-  }
+    ngOnInit(): void {
+        console.log(this.formulario);
+    }
+
+
+
+
 }
 
