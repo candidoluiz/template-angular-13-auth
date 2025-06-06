@@ -64,7 +64,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     }
   }
 
-  .accordion .card {
+  .accordion-item .card {
     box-shadow: 0 0 0 0 transparent;
     border: 0;
     background: transparent;
@@ -204,7 +204,7 @@ $sidebar-box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
     }
 
     .vsm-list {
-      padding: ($layout-spacer-x / 2) 0 ($layout-spacer-x / 2) $layout-spacer-x * 1.5;
+      padding: ($layout-spacer-x / 2) 0 ($layout-spacer-x / 2) $layout-spacer-x;
     }
 
     .vsm-item {

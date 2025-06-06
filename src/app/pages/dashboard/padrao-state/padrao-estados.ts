@@ -2,8 +2,7 @@ import { Injector } from "@angular/core";
 import { PadraoModalState } from "./padrao-modal-state";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
-export abstract class PadraoEstado extends PadraoModalState {
-    formulario;
+export abstract class PadraoEstado extends PadraoModalState {  
     modal: NgbModal;
     //protected msgService: MensagemService;
 

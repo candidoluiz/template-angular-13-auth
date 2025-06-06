@@ -4,6 +4,6 @@ export const environment = {
     CLIENT_URL: 'http://127.0.0.1:4200',
     CLIENT_URL_LOGOUT: 'http://127.0.0.1:4200/login',
     CLIENT_ID: 'meu-client-id',
-    AUTH_SERVER_URL: 'http://127.0.0.1:9000'
+    AUTH_SERVER_URL: 'http://127.0.0.1:9000/auth'
 };
 

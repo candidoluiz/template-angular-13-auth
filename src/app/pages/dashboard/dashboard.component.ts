@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalManagerService } from './test/modal-manager.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PadraoModalManagerService } from './padrao-state/padrao-modal-manager.service';
 

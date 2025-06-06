@@ -11,7 +11,6 @@ export class PadraoModalManagerService {
     private currentModal: PadraoModalState;
 
     constructor(private injector: Injector) {      
-        //const modal3 = new PadraoModal3(null);
         const modal2 = new PadraoModal2(null, injector);
         const modal1 = new PadraoModal1(modal2, injector);
 
